@@ -12,12 +12,14 @@ USE ieee.numeric_std.ALL;
 ENTITY vga_top IS
    PORT( 
       clk_in    : IN     std_logic;
+	  
       sw        : IN     std_logic_vector (11 DOWNTO 0);
+	  led       : OUT    std_logic_vector (11 DOWNTO 0);
+	  
+	  red_out   : OUT    std_logic_vector (3 DOWNTO 0) := (others => '0');
+	  green_out : OUT    std_logic_vector (3 DOWNTO 0) := (others => '0');
       blue_out  : OUT    std_logic_vector (3 DOWNTO 0) := (others => '0');
-      green_out : OUT    std_logic_vector (3 DOWNTO 0) := (others => '0');
       hsync_out : OUT    std_logic                     := '1';
-      led       : OUT    std_logic_vector (11 DOWNTO 0);
-      red_out   : OUT    std_logic_vector (3 DOWNTO 0) := (others => '0');
       vsync_out : OUT    std_logic                     := '1'
    );
    
